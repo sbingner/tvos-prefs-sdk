@@ -9,7 +9,7 @@
 #import <UIKit/UIViewController.h>
 #import "TSKPreviewingDelegate.h"
 #import "_TSKAnimatorDelegate.h"
-#import <UIKit/UINavigationControllerDelegate.h>
+#import <UIKit/UINavigationController.h>
 
 @protocol TSKPreviewing;
 @class UINavigationController, UIViewController, UIView, NSString;
@@ -20,16 +20,16 @@
 	UINavigationController* _navigationController;
 	UIViewController* _previewViewController;
 	UIView* _previewContainerView;
-	UIViewController*<TSKPreviewing> _previewProvider;
+	UIViewController<TSKPreviewing> *_previewProvider;
 
 }
 
 @property (assign,nonatomic) BOOL isAnimatingTransition;                                    //@synthesize isAnimatingTransition=_isAnimatingTransition - In the implementation block
 @property (nonatomic,readonly) UIView * previewContainerView;                               //@synthesize previewContainerView=_previewContainerView - In the implementation block
-@property (nonatomic,retain) UIViewController*<TSKPreviewing> previewProvider;              //@synthesize previewProvider=_previewProvider - In the implementation block
+@property (nonatomic,retain) UIViewController<TSKPreviewing> *previewProvider;              //@synthesize previewProvider=_previewProvider - In the implementation block
 @property (nonatomic,readonly) UINavigationController * navigationController;               //@synthesize navigationController=_navigationController - In the implementation block
 @property (nonatomic,readonly) UIViewController * previewViewController;                    //@synthesize previewViewController=_previewViewController - In the implementation block
-@property (readonly) unsigned long long hash; 
+@property (readonly) NSUInteger hash; 
 @property (readonly) Class superclass; 
 @property (copy,readonly) NSString * description; 
 @property (copy,readonly) NSString * debugDescription; 
@@ -49,7 +49,7 @@
 -(BOOL)isAnimatingTransition;
 -(void)setPreviewViewController:(id)arg1 animated:(BOOL)arg2 ;
 -(void)setIsAnimatingTransition:(BOOL)arg1 ;
--(UIViewController*<TSKPreviewing>)previewProvider;
--(void)setPreviewProvider:(UIViewController*<TSKPreviewing>)arg1 ;
+-(UIViewController<TSKPreviewing>*)previewProvider;
+-(void)setPreviewProvider:(UIViewController<TSKPreviewing>*)arg1 ;
 @end
 
